@@ -3,10 +3,12 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
+  'angular2-google-maps': 'vendor/angular2-google-maps'
 };
 
 /** User packages configuration. */
 const packages: any = {
+  'angular2-google-maps': { defaultExtension: 'js' }
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////

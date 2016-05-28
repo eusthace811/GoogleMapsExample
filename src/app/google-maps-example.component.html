@@ -1,3 +1,29 @@
 <h1>
   {{title}}
 </h1>
+
+<sebm-google-map class="sebm-google-map-container"
+  [latitude]="lat"
+  [longitude]="lng"
+  [zoom]="zoom"
+  [disableDefaultUI]="true"
+  [zoomControl]="true"
+  >
+  <styled-map></styled-map>
+
+  <sebm-google-map-marker 
+      *ngFor="let m of markers; let i = index"
+      (markerClick)="clickedMarker(m.label, i)"
+      [latitude]="m.lat"
+      [longitude]="m.lng"
+      [label]="m.label"
+      [markerDraggable]="m.draggable"
+      [iconUrl]="m.icon">
+      
+    <sebm-google-map-info-window>
+        <p>More info!</p>
+    </sebm-google-map-info-window>
+    
+  </sebm-google-map-marker>
+
+</sebm-google-map>
